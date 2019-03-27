@@ -5,45 +5,20 @@
 ## Makefile
 ##
 
-SRC		=
-
-MAIN		=		src/main.c
-
-SRC_TEST	=
-
-OBJ		=		$(SRC:.c=.o) $(MAIN:.c=.o)
-
 NAME		=		dante
-
-BIN		=		unit_tests
-
-CC		=		gcc
-
-CFLAGS		=		-I./include -g
-
-LIB		=		-L./lib -lmy
-
-LDFLAGS		=		-lcriterion --coverage
 
 all:				$(NAME)
 
-$(NAME):			$(OBJ)
-				make -sC lib/my
-				$(CC) -o $(NAME) $(OBJ) $(LIB)
-
-tests_run:
-				make -sC lib/my
-		$(CC) -o $(BIN) $(SRC) $(SRC_TEST) $(CFLAGS) $(LIB) $(LDFLAGS)
-				./$(BIN)
+$(NAME):			
+					make -sC generator/
+					make -sC solver/
 
 clean:
-			make -sC lib/my clean
-			rm -f $(OBJ)
-			rm -f *.gc*
+					make -sC generator/ clean
+					make -sC solver/ clean
 
-fclean:			clean
-			make -sC lib/my fclean
-			rm -f $(NAME)
-			rm -f $(BIN)
+fclean:				clean
+					make -sC generator/ fclean
+					make -sC solver/ fclean
 
-re:			fclean all
+re:					fclean all

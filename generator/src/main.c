@@ -20,7 +20,7 @@ int main(int ac, char **av)
     if (ac == 2 && my_strcmp(av[1], "-h") == TRUE) {
         usage();
         return (0);
-    } else if (ac != 4) {
+    } else if (ac < 3 || ac > 4) {
         my_putstr_error("Try -h.\n");
         return (84);
     }

@@ -13,9 +13,8 @@ int check_arg(char **av)
         my_putstr_error("Error: expected width and height to be integers.\n");
         return (FALSE);
     }
-    if (my_strcmp(av[2], "perfect") == FALSE &&
-        my_strcmp(av[2], "imperfect") == FALSE) {
-        my_putstr_error("Error: expected perfect/imperfect.\n");
+    if (av[2] != NULL && my_strcmp(av[2], "perfect") == FALSE) {
+        my_putstr_error("Error: expected perfect/NULL.\n");
         return (FALSE);
     }
     return (TRUE);

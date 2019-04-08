@@ -9,10 +9,10 @@
 
 int is_perfect(char *str)
 {
-    if (my_strcmp(str, "perfect") == TRUE)
-        return (PERFECT);
-    else if (my_strcmp(str, "imperfect") == TRUE)
+    if (str == NULL)
         return (NOT_PERFECT);
+    else if (my_strcmp(str, "perfect") == TRUE)
+        return (PERFECT);
 }
 
 index_t **get_empty_maze(int width, int height)

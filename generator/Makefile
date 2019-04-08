@@ -5,7 +5,8 @@
 ## Makefile
 ##
 
-SRC		=
+SRC		=			src/init_struct_maze.c			\
+					src/check_argument.c
 
 MAIN		=		src/main.c
 

@@ -6,7 +6,9 @@
 ##
 
 SRC		=			src/init_struct_maze.c			\
-					src/check_argument.c
+					src/check_argument.c			\
+					src/generate_maze.c				\
+					src/cells.c
 
 MAIN		=		src/main.c
 

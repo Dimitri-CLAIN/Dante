@@ -18,4 +18,15 @@ enum IS_PERFECT {
     NOT_PERFECT
 };
 
+enum IS_WALL {
+    WALL = 0,
+    NOT_WALL,
+    END
+};
+
+enum IS_VISITED {
+    VISITED = 0,
+    NOT_VISITED
+};
+
 #endif

@@ -17,5 +17,8 @@
 
 void init_struct_maze(char **, maze_t *);
 int check_arg(char **);
+void generate_maze(maze_t);
+index_t create_a_cell(int, int);
+index_t end_cell(void);
 
 #endif

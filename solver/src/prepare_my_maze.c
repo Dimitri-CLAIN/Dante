@@ -56,7 +56,13 @@ maze_t load_my_maze(char **map)
 maze_t create_my_maze(char *file)
 {
     char **map = my_str_to_all_array(read_my_file(file), '\n');
-    maze_t maze = load_my_maze(map);
+    maze_t maze;
 
+    if (check_map(map) == FALSE)
+        return;
+    if (check_correct_end(map) == FALSE)
+        return;
+    maze = load_my_maze(map);
+    free_array(map);
     return (maze);
 }

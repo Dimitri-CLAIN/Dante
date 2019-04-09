@@ -9,9 +9,78 @@
 #include <criterion/redirect.h>
 #include "my.h"
 
-Test(check_map, err)
+void redirect_all_std(void)
 {
-    /*Check all error*/
+    cr_redirect_stdout();
+    cr_redirect_stderr();
+}
+
+Test(check_size, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"*XX*X***", "**X*XX*X*", NULL};
+    int res = check_map(map);
+
+    cr_assert_eq(1, res);
+    cr_assert_stderr_eq_str("Error: Size\n");
+}
+
+Test(check_size_correct, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"*XX*X****", "**X*XX*X*", NULL};
+    int res = check_map(map);
+
+    cr_assert_eq(0, res);
+}
+
+Test(check_size_q, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"*XX*X***", NULL};
+    int res = check_map(map);
+
+    cr_assert_eq(0, res);
+}
+
+Test(check_synthaxe, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"*XX*X***", "**XzXX*X", NULL};
+    int res = check_map(map);
+
+    cr_assert_eq(1, res);
+    cr_assert_stderr_eq_str("Error: Syntaxe\n");
+}
+
+Test(check_end, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"********X", "*******X*", NULL};
+    int res = check_correct_end(map);
+
+    cr_assert_eq(1, res);
+    cr_assert_stderr_eq_str("Error: End false.\n");
+}
+
+Test(check_beginning, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"*XX*X**X", "X*X*XX***", NULL};
+    int res = check_correct_end(map);
+
+    cr_assert_eq(1, res);
+    cr_assert_stderr_eq_str("Error: Beginning false.\n");
+}
+
+Test(check_beginning_err, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"*", "*", NULL};
+    int res = check_correct_end(map);
+
+    cr_assert_eq(0, res);
+}
+
+Test(check_, check_map_err, .init = redirect_all_std)
+{
+    char *map[] = {"", "", NULL};
+    int res = check_correct_end(map);
+
+    cr_assert_eq(0, res);
 }
 
 Test(load_map, load)

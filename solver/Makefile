@@ -5,7 +5,9 @@
 ## Makefile
 ##
 
-SRC		=			src/prepare_my_maze.c
+SRC		=			src/prepare_my_maze.c	\
+					src/check_map.c			\
+					src/check_correct_end.c
 
 MAIN		=		src/main.c
 

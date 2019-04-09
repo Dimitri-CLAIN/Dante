@@ -19,4 +19,7 @@ char *read_my_file(char *file);
 maze_t create_my_maze(char *file);
 maze_t load_my_maze(char **map);
 
+int check_map(char **map);
+int check_correct_end(char **map);
+
 #endif

@@ -7,7 +7,8 @@
 
 #include "my.h"
 
-int main(void)
+int main(int ac, char **av)
 {
+    create_my_maze(av[1]);
     return (0);
 }

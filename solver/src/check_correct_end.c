@@ -35,13 +35,13 @@ int check_correct_end(char **map)
     int y = 0;
 
     if (check_around_first(map, x, y) == 2) {
-        my_putstr("no solution found\n");        
+        my_putstr("no solution found\n");
         return (FALSE);
     }
     y = array_len(map);
     x = my_strlen(map[y - 1]);
     if (check_around_end(map, (x - 1), (y - 1)) == 2) {
-        my_putstr("no solution found\n");        
+        my_putstr("no solution found\n");
         return (FALSE);
     }
     return (TRUE);

@@ -14,10 +14,12 @@ void print_my_maze(maze_t *maze)
 
     if (maze == NULL)
         return;
-    while (maze->all_maze[y] != NULL) {
+    while (maze->all_maze[y + 1] != NULL) {
         for (x = 0; maze->all_maze[y][x].ch != '\0'; x++)
             my_putchar(maze->all_maze[y][x].ch);
         my_putchar('\n');
         y++;
     }
+    for (x = 0; maze->all_maze[y][x].ch != '\0'; x++)
+            my_putchar(maze->all_maze[y][x].ch);
 }

@@ -29,9 +29,6 @@ int my_algo(maze_t *maze, int x, int y)
     if (my_algo(maze, x + 1, y) != FALSE || my_algo(maze, x, y + 1) != FALSE ||
         my_algo(maze, x - 1, y) != FALSE || my_algo(maze, x, y - 1) != FALSE) {
         maze->all_maze[y][x].ch = 'o';
-        print_my_maze(maze);
-        sleep(1);
-        printf("\n--------\n");
         return (TRUE);
     }
     return (FALSE);

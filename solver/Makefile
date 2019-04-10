@@ -5,11 +5,16 @@
 ## Makefile
 ##
 
-SRC		=
+SRC		=			src/prepare_my_maze.c	\
+					src/check_map.c			\
+					src/check_correct_end.c	\
+					src/print_my_maze.c		\
+					src/manage_solver.c		\
+					src/my_algo.c
 
 MAIN		=		src/main.c
 
-SRC_TEST	=
+SRC_TEST	=		tests/tests_read_map.c
 
 OBJ		=		$(SRC:.c=.o) $(MAIN:.c=.o)
 

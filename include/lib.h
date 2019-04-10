@@ -23,4 +23,6 @@ int my_getnbr(char *);
 char *clean_str(char *);
 int isnum(char *);
 
+char **my_str_to_all_array(char *, char);
+
 #endif

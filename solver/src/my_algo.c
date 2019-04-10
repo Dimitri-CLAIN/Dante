@@ -15,25 +15,31 @@ int check_correct_access(room_t **all_maze, int x, int y)
     return (TRUE);
 }
 
-int my_algo(maze_t *maze, int x, int y)
+int check_error(maze_t *maze, int x, int y)
 {
     if ( x < 0 || y < 0 || maze->all_maze[y] == NULL
         || maze->all_maze[y][x].ch == '\0')
         return (FALSE);
-    if (maze->all_maze[y][x].type == END)
+    if (maze->all_maze[y][x].type == END) {
+        maze->all_maze[y][x].ch = 'o';
         return (END);
+    }
     else if (check_correct_access(maze->all_maze, x, y) == FALSE)
         return (FALSE);
-    else
-        maze->all_maze[y][x].state = SEMI;
+    return (0);
+}
+
+int my_algo(maze_t *maze, int x, int y)
+{
+    int ret = 0;
+
+    if ((ret = check_error(maze, x, y)) != 0)
+        return (ret);
+    maze->all_maze[y][x].state = SEMI;
     if (my_algo(maze, x + 1, y) != FALSE || my_algo(maze, x, y + 1) != FALSE ||
         my_algo(maze, x - 1, y) != FALSE || my_algo(maze, x, y - 1) != FALSE) {
         maze->all_maze[y][x].ch = 'o';
-        print_my_maze(maze);
-        sleep(1);
-        printf("\n--------\n");
         return (TRUE);
     }
     return (FALSE);
 }
-/*Faire une liste chainé des check point ->coord x, y*/

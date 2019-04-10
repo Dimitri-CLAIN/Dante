@@ -24,6 +24,5 @@ int main(int ac, char **av)
         return (84);
     }
     manage_solver(&maze);
-    /*FREE*/
     return (0);
 }

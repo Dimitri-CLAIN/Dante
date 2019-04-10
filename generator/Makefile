@@ -7,7 +7,11 @@
 
 SRC		=			src/check_argument.c		\
 					src/init_maze.c				\
-					src/generate_maze.c
+					src/generate_maze.c			\
+					src/manage_stack.c			\
+					src/check_visited.c			\
+					src/get_random_nb.c			\
+					src/display_maze.c
 
 MAIN		=		src/main.c
 
@@ -21,7 +25,7 @@ BIN		=		unit_tests
 
 CC		=		gcc
 
-CFLAGS		=		-I./include -g
+CFLAGS		=		-I./include -I../include -g
 
 LIB		=		-L../lib -lmy
 

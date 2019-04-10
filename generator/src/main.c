@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+#include <time.h>
 
 void usage(void)
 {
@@ -13,10 +14,22 @@ void usage(void)
 ./generator <width> <height> <perfect/imperfect>\n");
 }
 
-int main(int ac, char **av)
+void wich_generator(char **av)
 {
     char **maze = NULL;
 
+    maze = init_maze(my_getnbr(av[1]), my_getnbr(av[2]));
+    srand(time(NULL));
+    if (av[3] != NULL)
+        maze = generate_maze(maze);
+    else
+        my_putstr("je fais pas encore celui là :/\n\n");
+    display_maze(maze);
+    free_array(maze);
+}
+
+int main(int ac, char **av)
+{
     if (ac == 2 && my_strcmp(av[1], "-h") == TRUE) {
         usage();
         return (0);
@@ -26,7 +39,6 @@ int main(int ac, char **av)
     }
     if (check_arg(av + 1) != TRUE)
         return (84);
-    maze = init_maze(my_getnbr(av[1]), my_getnbr(av[2]));
-    generate_maze(maze);
+    wich_generator(av);
     return (0);
 }

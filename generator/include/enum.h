@@ -13,4 +13,11 @@ enum booleen {
     FALSE
 };
 
+enum way {
+    NORTH = 0,
+    SOUTH,
+    WEST,
+    EST
+};
+
 #endif

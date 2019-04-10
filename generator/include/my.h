@@ -11,25 +11,22 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "lib.h"
 #include "enum.h"
 #include "struct.h"
 
-void my_putchar(char);
-int my_putstr(char *);
-int my_putstr_error(char *);
-int my_strlen(char *);
-char **word_array(char *, char);
-char *my_strdup(char *);
-char *clean_str(char *);
-int isnum(char *);
-void free_array(char **);
-char **word_array(char *, char);
-int my_strcmp(char *, char *);
-char *my_strcat(char *, char *);
-int my_getnbr(char *);
-
 int check_arg(char **);
 char **init_maze(int, int);
-void generate_maze(char **);
+char **generate_maze(char **);
+stack_t *push_stack(stack_t *, int, int);
+stack_t *pop_stack(stack_t *);
+void clear_stack(stack_t *);
+int choose_rand_neighbour(char **, pos_t);
+int is_visited(char **, int, int);
+int is_neighbours_visited(char **, pos_t);
+int is_all_cells_visited(char **);
+pos_t get_position(int);
+pos_t get_semi_position(int);
+void display_maze(char **);
 
 #endif

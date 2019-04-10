@@ -13,7 +13,7 @@ char *put_line(char *str, int width)
     int state = 0;
 
     while (i != width) {
-        str[i++] = (state == 1) ? 'X' : '*';
+        str[i++] = (state == 1) ? '0' : '1';
         state = (state == 0) ? 1 : 0;
     }
     str[i] = '\0';
@@ -25,7 +25,7 @@ char *put_walls(char *str, int width)
     int i = 0;
 
     while (i != width)
-        str[i++] = 'X';
+        str[i++] = '0';
     str[i] = '\0';
     return (str);
 }
@@ -47,7 +47,9 @@ char **init_maze(int width, int height)
         }
         i++;
     }
-    maze[i - 1][width - 1] = '*';
+    maze[i - 1][width - 1] = '1';
+    if (width > 2)
+        maze[i - 1][width - 2] = '1';
     maze[i] = NULL;
     return (maze);
 }

@@ -24,7 +24,7 @@ enum type
 enum state
 {
     GOOD = 5,
-    NOW,
+    CHECK_POINT,
     SEMI,
     WRONG,
     UNKNOW

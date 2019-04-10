@@ -35,13 +35,13 @@ int check_correct_end(char **map)
     int y = 0;
 
     if (check_around_first(map, x, y) == 2) {
-        my_putstr_error("Error: Beginning false.\n");        
+        my_putstr_error("Error: Beginning false.\n");
         return (FALSE);
     }
     y = array_len(map);
     x = my_strlen(map[y - 1]);
     if (check_around_end(map, (x - 1), (y - 1)) == 2) {
-        my_putstr_error("Error: End false.\n");        
+        my_putstr_error("Error: End false.\n");
         return (FALSE);
     }
     return (TRUE);

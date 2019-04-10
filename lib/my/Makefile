@@ -18,7 +18,8 @@ SRC		=		my_putchar.c			\
 				free_array.c			\
 				my_getnbr.c				\
 				clean_str.c				\
-				isnum.c
+				isnum.c					\
+				my_str_to_all_array.c
 
 OBJ		=		$(SRC:.c=.o)
 

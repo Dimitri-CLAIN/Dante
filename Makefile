@@ -9,7 +9,7 @@ NAME		=		dante
 
 all:				$(NAME)
 
-$(NAME):			
+$(NAME):
 					make -sC generator/
 					make -sC solver/
 

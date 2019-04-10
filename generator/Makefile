@@ -8,7 +8,9 @@
 SRC		=			src/init_struct_maze.c			\
 					src/check_argument.c			\
 					src/generate_maze.c				\
-					src/cells.c
+					src/cells.c						\
+					src/free_maze.c					\
+					src/my_algorithm.c
 
 MAIN		=		src/main.c
 

@@ -20,5 +20,7 @@ int check_arg(char **);
 void generate_maze(maze_t);
 index_t create_a_cell(int, int);
 index_t end_cell(void);
+void free_maze(index_t **);
+void algo(maze_t *);
 
 #endif

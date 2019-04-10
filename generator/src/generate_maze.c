@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void is_wall_display(int i, int j, maze_t info)
+void cell_display(int i, int j, maze_t info)
 {
     if (info.maze[i][j].wall == NOT_WALL)
         my_putchar('*');
@@ -21,7 +21,7 @@ void display_maze(maze_t info)
 
     while (info.maze[i] != NULL) {
         for (int j = 0; info.maze[i][j].wall != END; j++)
-            is_wall_display(i, j, info);
+            cell_display(i, j, info);
         if (info.maze[++i] != NULL)
             my_putchar('\n');
     }
@@ -29,5 +29,7 @@ void display_maze(maze_t info)
 
 void generate_maze(maze_t info)
 {
-    
+    algo(&info);
+    display_maze(info);
+    free_maze(info.maze);
 }

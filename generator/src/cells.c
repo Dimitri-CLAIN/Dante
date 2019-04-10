@@ -14,7 +14,7 @@ index_t create_a_cell(int x, int y)
     cell.x = x;
     cell.y = y;
     cell.state = NOT_VISITED;
-    cell.wall = NOT_WALL;
+    cell.wall = WALL;
     return (cell);
 }
 

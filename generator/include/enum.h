@@ -13,6 +13,13 @@ enum booleen {
     FALSE
 };
 
+enum way {
+    NORTH = 0,
+    SOUTH,
+    WEST,
+    EST
+};
+
 enum IS_PERFECT {
     PERFECT = 0,
     NOT_PERFECT

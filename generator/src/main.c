@@ -15,7 +15,7 @@ void usage(void)
 
 int main(int ac, char **av)
 {
-    maze_t info;
+    char **maze = NULL;
 
     if (ac == 2 && my_strcmp(av[1], "-h") == TRUE) {
         usage();
@@ -26,7 +26,7 @@ int main(int ac, char **av)
     }
     if (check_arg(av + 1) != TRUE)
         return (84);
-    init_struct_maze(av + 1, &info);
-    generate_maze(info);
+    maze = init_maze(my_getnbr(av[1]), my_getnbr(av[2]));
+    generate_maze(maze);
     return (0);
 }

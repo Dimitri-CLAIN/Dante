@@ -22,8 +22,10 @@ void wich_generator(char **av)
     srand(time(NULL));
     if (av[3] != NULL)
         maze = generate_maze(maze);
-    else
+    else {
         maze = generate_maze(maze);
+        maze = make_it_imperfect(maze, getnbr(av[1]), getnbr(av[2]));
+    }
     display_maze(maze);
     free_array(maze);
 }

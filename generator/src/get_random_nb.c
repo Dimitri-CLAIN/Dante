@@ -7,16 +7,16 @@
 
 #include "my.h"
 
-int get_random_nb(void)
+int get_random_nb(int limit)
 {
-    int ret = rand() % 4;
+    int ret = rand() % limit;
 
     return (ret);
 }
 
 int choose_rand_neighbour(char **maze, pos_t pos)
 {
-    int r = get_random_nb();
+    int r = get_random_nb(4);
 
     if (r == NORTH && is_visited(maze, pos.x - 2, pos.y) == FALSE)
         return (NORTH);

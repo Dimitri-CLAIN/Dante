@@ -29,5 +29,6 @@ pos_t get_position(int);
 pos_t get_semi_position(int);
 void display_maze(char **);
 char **make_it_imperfect(char **, int, int);
+int get_random_nb(int);
 
 #endif

@@ -11,7 +11,8 @@ SRC		=			src/check_argument.c		\
 					src/manage_stack.c			\
 					src/check_visited.c			\
 					src/get_random_nb.c			\
-					src/display_maze.c
+					src/display_maze.c			\
+					src/make_maze_imperfect.c
 
 MAIN		=		src/main.c
 

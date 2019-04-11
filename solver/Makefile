@@ -10,7 +10,8 @@ SRC		=			src/prepare_my_maze.c	\
 					src/check_correct_end.c	\
 					src/print_my_maze.c		\
 					src/manage_solver.c		\
-					src/my_algo.c
+					src/my_algo.c			\
+					src/free_annex.c
 
 MAIN		=		src/main.c
 

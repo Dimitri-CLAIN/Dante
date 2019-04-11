@@ -27,5 +27,6 @@ char *my_strcat(char *dest, char *src)
     while (src[j] != '\0')
         ret[i++] = src[j++];
     ret[i] = '\0';
+    free(dest);
     return (ret);
 }

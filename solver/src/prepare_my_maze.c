@@ -80,12 +80,10 @@ maze_t create_my_maze(char *file)
         free_array(map);
         return (maze);
     }
-    free(maze.all_maze[0]);
-    free(maze.all_maze);
+    free_maze_ac(maze.all_maze, maze.all_maze[0]);
     maze = load_my_maze(map);
     maze.all_maze[0][0].type = FIRST;
     maze.all_maze[array_len(map) - 1][my_strlen(map[0]) - 1].type = END;
-    free_array(map);
-    free(clean);
+    free_arr_clean(map, clean);
     return (maze);
 }

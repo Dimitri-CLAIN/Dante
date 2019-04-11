@@ -41,8 +41,7 @@ char **my_farraazy(char **array, char *str, char c)
         if (c != str[i]) {
             x++;
             i++;
-        }
-        else
+        } else
             i++;
     }
     x++;

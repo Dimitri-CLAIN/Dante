@@ -26,7 +26,8 @@ void display_maze(char **maze)
 
     while (maze[i] != NULL) {
         display_maze_str(maze[i]);
-        my_putchar('\n');
         i++;
+        if (maze[i] != NULL)
+            my_putchar('\n');
     }
 }

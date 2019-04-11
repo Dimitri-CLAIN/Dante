@@ -35,7 +35,7 @@ int main(int ac, char **av)
         return (0);
     } else if (ac < 3 || ac > 4) {
         my_putstr_error("Try -h.\n");
-        return (84);
+        return (0);
     }
     if (check_arg(av + 1) != TRUE)
         return (84);

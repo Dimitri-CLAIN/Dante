@@ -57,5 +57,8 @@ char  **generate_maze(char **maze)
     pos.y = 0;
     maze[pos.y][pos.x] = '2';
     maze = algo(maze, pos);
+    if (my_strlen(maze[0]) > 1 &&
+        maze[array_len(maze) - 1][my_strlen(maze[0]) - 1] == '3')
+        maze[array_len(maze) - 1][my_strlen(maze[0]) - 2] = '2';
     return (maze);
 }

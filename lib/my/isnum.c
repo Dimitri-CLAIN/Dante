@@ -9,6 +9,8 @@ int isnum(char *str)
 {
     int i = 0;
 
+    if (str[0] = '-')
+        str++;
     while (str[i] != '\0') {
         if (str[i] < '0' || str[i] > '9')
             return (0);

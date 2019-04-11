@@ -47,9 +47,7 @@ char **init_maze(int width, int height)
         }
         i++;
     }
-    maze[i - 1][width - 1] = '1';
-    if (width > 2)
-        maze[i - 1][width - 2] = '1';
+    maze[i - 1][width - 1] = '3';
     maze[i] = NULL;
     return (maze);
 }

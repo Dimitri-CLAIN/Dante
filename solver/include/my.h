@@ -26,4 +26,7 @@ int check_correct_end(char **map);
 void manage_solver(maze_t *maze);
 int my_algo(maze_t *maze, int x, int y);
 
+void free_maze_ac(room_t **all_maze, room_t *maze);
+void free_arr_clean(char **map, char *clean);
+
 #endif

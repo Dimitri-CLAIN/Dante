@@ -9,6 +9,15 @@
 #include <fcntl.h>
 #include "my.h"
 
+char *check_end_file(char *str)
+{
+    int i = my_strlen(str);
+
+    if (str[i - 1] == '\n')
+        str[i - 1] = '\0';
+    return (str);
+}
+
 char *read_my_file(char *file)
 {
     int n = 0;
@@ -17,10 +26,10 @@ char *read_my_file(char *file)
     char *clean = my_strdup("");
     FILE *fd = fopen(file, "r");
 
-    while (getline(&buf, &size, fd) != -1) {
+    while (getline(&buf, &size, fd) != -1)
         clean = my_strcat(clean, buf);
-    }
     fclose(fd);
+    clean = check_end_file(clean);
     return (clean);
 }
 
@@ -56,7 +65,8 @@ maze_t load_my_maze(char **map)
 
 maze_t create_my_maze(char *file)
 {
-    char **map = my_str_to_all_array(read_my_file(file), '\n');
+    char *clean = read_my_file(file);
+    char **map = my_str_to_all_array(clean, '\n');
     maze_t maze;
 
     maze.all_maze = malloc(sizeof(room_t **));
@@ -70,11 +80,10 @@ maze_t create_my_maze(char *file)
         free_array(map);
         return (maze);
     }
-    free(maze.all_maze[0]);
-    free(maze.all_maze);
+    free_maze_ac(maze.all_maze, maze.all_maze[0]);
     maze = load_my_maze(map);
     maze.all_maze[0][0].type = FIRST;
     maze.all_maze[array_len(map) - 1][my_strlen(map[0]) - 1].type = END;
-    free_array(map);
+    free_arr_clean(map, clean);
     return (maze);
 }

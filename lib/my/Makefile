@@ -5,13 +5,13 @@
 ## makefile lib
 ##
 
-SRC		=		my_putchar.c			\
+SRC		=		my_putchar.c				\
 				my_putstr.c				\
-				my_putstr_error.c		\
+				my_putstr_error.c			\
 				my_strcat.c				\
 				my_strdup.c				\
 				my_strcmp.c				\
-				my_str_to_word_array.c	\
+				my_str_to_word_array.c			\
 				my_strlen.c				\
 				my_strcpy.c				\
 				array_len.c				\

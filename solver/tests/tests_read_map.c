@@ -55,7 +55,7 @@ Test(check_end, check_map_err, .init = redirect_all_std)
     int res = check_correct_end(map);
 
     cr_assert_eq(1, res);
-    cr_assert_stderr_eq_str("Error: End false.\n");
+    cr_assert_stdout_eq_str("no solution found\n");
 }
 
 Test(check_beginning, check_map_err, .init = redirect_all_std)
@@ -64,7 +64,7 @@ Test(check_beginning, check_map_err, .init = redirect_all_std)
     int res = check_correct_end(map);
 
     cr_assert_eq(1, res);
-    cr_assert_stderr_eq_str("Error: Beginning false.\n");
+    cr_assert_stdout_eq_str("no solution found\n");
 }
 
 Test(check_beginning_err, check_map_err, .init = redirect_all_std)

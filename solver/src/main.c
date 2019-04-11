@@ -7,6 +7,18 @@
 
 #include "my.h"
 
+void final_free(maze_t *maze)
+{
+    int i = 0;
+    int n = 0;
+
+    while (maze->all_maze[i] != NULL) {
+        free(maze->all_maze[i]);
+        i++;
+    }
+    free(maze->all_maze);
+}
+
 int main(int ac, char **av)
 {
     maze_t maze;
@@ -24,5 +36,6 @@ int main(int ac, char **av)
         return (84);
     }
     manage_solver(&maze);
+    final_free(&maze);
     return (0);
 }

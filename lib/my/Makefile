@@ -16,7 +16,7 @@ SRC		=		my_putchar.c			\
 				my_strcpy.c				\
 				array_len.c				\
 				free_array.c			\
-				my_getnbr.c				\
+				getnbr.c				\
 				clean_str.c				\
 				isnum.c					\
 				my_str_to_all_array.c

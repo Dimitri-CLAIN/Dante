@@ -5,7 +5,6 @@
 ** return_nb_in_str
 */
 
-
 int    my_getnbr(char const *str)
 {
     int i = 0;

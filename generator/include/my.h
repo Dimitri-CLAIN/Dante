@@ -28,5 +28,6 @@ int is_all_cells_visited(char **);
 pos_t get_position(int);
 pos_t get_semi_position(int);
 void display_maze(char **);
+char **make_it_imperfect(char **, int, int);
 
 #endif

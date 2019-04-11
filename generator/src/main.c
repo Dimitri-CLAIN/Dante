@@ -18,12 +18,12 @@ void wich_generator(char **av)
 {
     char **maze = NULL;
 
-    maze = init_maze(my_getnbr(av[1]), my_getnbr(av[2]));
+    maze = init_maze(getnbr(av[1]), getnbr(av[2]));
     srand(time(NULL));
     if (av[3] != NULL)
         maze = generate_maze(maze);
     else
-        my_putstr("je fais pas encore celui là :/\n\n");
+        maze = generate_maze(maze);
     display_maze(maze);
     free_array(maze);
 }
@@ -37,7 +37,7 @@ int main(int ac, char **av)
         my_putstr_error("Try -h.\n");
         return (0);
     }
-    if (check_arg(av + 1) != TRUE)
+    if (check_arg(av) != TRUE)
         return (84);
     wich_generator(av);
     return (0);

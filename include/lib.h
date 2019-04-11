@@ -19,7 +19,7 @@ char **my_str_to_word_array(char *, char);
 char *my_strcpy(char *);
 int array_len(char **);
 void free_array(char **);
-int my_getnbr(char *);
+int getnbr(char *);
 char *clean_str(char *);
 int isnum(char *);
 

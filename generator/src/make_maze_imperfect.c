@@ -17,13 +17,11 @@ int get_nb_wall(char **maze)
             return_value += (maze[i][j] == '0') ? 1 : 0;
         i++;
     }
-    printf("walls = %d\n", return_value);
     return (return_value);
 }
 
 int is_maze_too_small(char **maze, int width, int height)
 {
-    printf("turn = %d\n", width + height * 2);
     if ((width + height * 2) >= get_nb_wall(maze))
         return (TRUE);
     return (FALSE);

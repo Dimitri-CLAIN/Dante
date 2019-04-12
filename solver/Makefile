@@ -54,3 +54,5 @@ fclean:			clean
 			rm -f $(BIN)
 
 re:			fclean all
+
+.PHONY:	all tests_run clean fclean re

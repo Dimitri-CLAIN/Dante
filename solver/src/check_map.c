@@ -49,6 +49,15 @@ int check_size(char **map)
 
 int check_map(char **map)
 {
+    int n = 0;
+
+    if (array_len(map) == 1) {
+        while (map[0][n] != '\0') {
+            my_putchar('o');
+            n++;
+        }
+        return (FALSE);
+    }
     if (check_correct_synthaxe(map) == FALSE) {
         my_putstr_error("Error: Syntaxe\n");
         return (FALSE);

@@ -37,7 +37,7 @@ Test(check_size_q, check_map_err, .init = redirect_all_std)
     char *map[] = {"*XX*X***", NULL};
     int res = check_map(map);
 
-    cr_assert_eq(0, res);
+    cr_assert_eq(FALSE, res);
 }
 
 Test(check_synthaxe, check_map_err, .init = redirect_all_std)
@@ -55,7 +55,7 @@ Test(check_end, check_map_err, .init = redirect_all_std)
     int res = check_correct_end(map);
 
     cr_assert_eq(1, res);
-    cr_assert_stdout_eq_str("no solution found\n");
+    cr_assert_stdout_eq_str("no solution found");
 }
 
 Test(check_beginning, check_map_err, .init = redirect_all_std)
@@ -64,7 +64,7 @@ Test(check_beginning, check_map_err, .init = redirect_all_std)
     int res = check_correct_end(map);
 
     cr_assert_eq(1, res);
-    cr_assert_stdout_eq_str("no solution found\n");
+    cr_assert_stdout_eq_str("no solution found");
 }
 
 Test(check_beginning_err, check_map_err, .init = redirect_all_std)

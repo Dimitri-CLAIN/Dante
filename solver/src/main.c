@@ -33,7 +33,7 @@ int main(int ac, char **av)
     } else if (maze.all_maze[0][0].type == WRONG) {
         free(maze.all_maze[0]);
         free(maze.all_maze);
-        return (84);
+        return (0);
     }
     manage_solver(&maze);
     final_free(&maze);

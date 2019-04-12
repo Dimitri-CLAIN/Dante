@@ -87,8 +87,8 @@ Test(load_map, load)
 {
     int n = 0;
     int i = 0;
-    char *res[] = {"***x", "**x*", NULL};
-    char *map[] = {"***x", "**x*", NULL};
+    char *res[] = {"***X", "**X*", NULL};
+    char *map[] = {"***X", "**X*", NULL};
     maze_t maze = load_my_maze(map);
 
     while (map[n] != NULL) {
@@ -96,16 +96,4 @@ Test(load_map, load)
             cr_assert_eq(maze.all_maze[n][i].ch, res[n][i]);
         n++;
     }
-}
-
-Test(print_map, print, .init = redirect_all_std)
-{
-    int n = 0;
-    int i = 0;
-    char *res = "***x\n**x*\n";
-    char *map[] = {"***x", "**x*", NULL};
-    maze_t maze = load_my_maze(map);
-
-    print_my_maze(&maze);
-    cr_assert_stdout_eq_str(res);
 }

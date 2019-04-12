@@ -16,10 +16,10 @@ void print_my_maze(maze_t *maze)
         return;
     while (maze->all_maze[y + 1] != NULL) {
         for (x = 0; maze->all_maze[y][x].ch != '\0'; x++)
-            my_putchar(maze->all_maze[y][x].ch);
-        my_putchar('\n');
+            printf("%c", maze->all_maze[y][x].ch);
+        printf("\n");
         y++;
     }
     for (x = 0; maze->all_maze[y][x].ch != '\0'; x++)
-            my_putchar(maze->all_maze[y][x].ch);
+            printf("%c", maze->all_maze[y][x].ch);
 }

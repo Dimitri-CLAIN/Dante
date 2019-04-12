@@ -15,7 +15,8 @@ SRC		=			src/prepare_my_maze.c	\
 
 MAIN		=		src/main.c
 
-SRC_TEST	=		tests/tests_read_map.c
+SRC_TEST	=		tests/tests_read_map.c	\
+					tests/tests_my_algo.c
 
 OBJ		=		$(SRC:.c=.o) $(MAIN:.c=.o)
 

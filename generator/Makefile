@@ -16,7 +16,7 @@ SRC		=			src/check_argument.c		\
 
 MAIN		=		src/main.c
 
-SRC_TEST	=
+SRC_TEST	=		tests/test_check_argument.c
 
 OBJ		=		$(SRC:.c=.o) $(MAIN:.c=.o)
 
@@ -54,3 +54,5 @@ fclean:			clean
 			rm -f $(BIN)
 
 re:			fclean all
+
+.PHONY: all clean fclean re tests_run
